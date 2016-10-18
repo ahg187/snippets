@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.integrate import ode
-import matplotlib.pyplot as plt
+import matplotlib.pylab as plt
 import matplotlib.animation as anim
 
 # Parameters of the system
@@ -30,7 +30,7 @@ plt.ylim(-3.0 * l, 0.0)
 plt.gca().set_aspect('equal')
 plt.gca().grid()
 
-# origin = plt.plot([ 0.0 ], [ 0.0 ], 'ro')
+origin = plt.plot([ 0.0 ], [ 0.0 ], 'ro')
 spring, = plt.plot([], [], 'b-', linewidth=2)
 mass, = plt.plot([], [], 'ro', markersize=10)
 
@@ -69,5 +69,5 @@ while solver.successful() and solver.t < t_max:
 ani = anim.FuncAnimation(plt.gcf(), draw, np.arange(0, len(frames)),
                          interval=1e3 * dt)
 
-# ani.save('spring_pendulum.mp4', fps = 30)
+#ani.save('spring_pendulum.mp4', fps = 30)
 plt.show()
